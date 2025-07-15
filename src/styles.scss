@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --dark-violet: #252429;
+    --mid-violet: #7874bb;
+    --light-violet: #bdc4e4;
+    --white-violet: #f3f4fa;
+}
+
+body {
+  background: linear-gradient(75deg, var(--dark-violet) 80%, var(--mid-violet));
+  color: var(--white-violet);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  color: var(--light-violet);
+}
+
+textarea {
+  resize: none;
+}
