@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2 class="mb-4">{{ editMode ? 'Editar Cliente' : 'Nuevo Cliente' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()" novalidate class="card p-4 shadow-sm">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid': form.get('nombre')?.invalid && form.get('nombre')?.touched }" />
+      <div class="invalid-feedback">El nombre es obligatorio.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.get('email')?.invalid && form.get('email')?.touched }" />
+      <div class="invalid-feedback">Debe ingresar un email válido.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Edad</label>
+      <input type="number" formControlName="edad" class="form-control" [ngClass]="{ 'is-invalid': form.get('edad')?.invalid && form.get('edad')?.touched }" />
+      <div class="invalid-feedback">La edad debe estar entre 10 y 100 años.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Objetivos</label>
+      <select formControlName="objetivos" class="form-select">
+        <option value="">Seleccionar objetivo</option>
+        <option value="Bajar de peso">Bajar de peso</option>
+        <option value="Aumentar masa muscular">Aumentar masa muscular</option>
+        <option value="Mejorar resistencia">Mejorar resistencia</option>
+        <option value="Salud general">Salud general</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
+      {{ editMode ? 'Actualizar Cliente' : 'Crear Cliente' }}
+    </button>
+  </form>
+</div>
