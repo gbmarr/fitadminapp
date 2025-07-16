@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <div class="d-flex gap-2 justify-content-between align-items-center mb-2">
+        <h2>Clientes registrados</h2>
+        <img src="../../../assets/images/trainer-svgrepo-com.svg" class="img-fluid" style="max-height: 50px;" alt="Pesa de entrenamiento">
+    </div>
+    <div *ngIf="loading" class="text-center mb-3">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <div *ngIf="!loading">
+        <div *ngIf="customers.length > 0; else sinClientes">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+                <div class="col" *ngFor="let customer of customers">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ customer.nombre }}</h5>
+                            <p class="card-text mb-1">
+                                <strong>Email:</strong> {{ customer.email}}
+                            </p>
+                            <p class="card-text mb-1" *ngIf="customer.edad">
+                                <strong>Edad:</strong> {{ customer.edad }}
+                            </p>
+                            <p class="card-text mb-2" *ngIf="customer.objetivos">
+                                <strong>Objetivos:</strong> {{ customer.objetivos }}
+                            </p>
+
+                            <div class="d-flex mt-2 gap-2">
+                                <a class="btn btn-warning w-50" [routerLink]="['/clientes', customer.id]">Editar</a>
+                                <button class="btn btn-danger w-50" (click)="eliminarCliente(customer.id!)">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #sinClientes>
+        <div class="alert alert-info">No hay clientes registrados aún</div>
+    </ng-template>
+</div>
