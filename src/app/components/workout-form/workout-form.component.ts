@@ -31,6 +31,11 @@ export class WorkoutFormComponent implements OnInit {
   ngOnInit(): void {
       this.customerService.getAll().subscribe(data => {
         this.customers = data;
+
+        if (this.customers.length === 0) {
+          this.toastService.showToast('No hay clientes disponibles. Crea uno primero.');
+          this.router.navigate(['/clientes/nuevo']);
+        }
       });
 
       this.workoutId = this.route.snapshot.paramMap.get('id') ?? undefined;
