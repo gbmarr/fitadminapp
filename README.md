@@ -1,27 +1,58 @@
-# Brewery
+# Fit Admin App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+**Fit Admin App** es una aplicación web desarrollada en Angular que permite a un entrenador personal gestionar de forma eficiente su base de **clientes** y los **planes de entrenamiento personalizados** de cada uno.
 
-## Development server
+Este proyecto fue realizado como parte del **Trabajo Práctico Final** del Seminario Angular 2025 de la carrera **TUDAI - UNICEN**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Temática del proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+La aplicación aborda la problemática de la organización manual y desordenada de rutinas en emprendimientos de entrenamiento personalizado. Permite:
 
-## Build
+- Crear, editar y eliminar clientes.
+- Crear entrenamientos personalizados para cada cliente.
+- Seleccionar ejercicios desde una API externa y asociarlos a un entrenamiento.
+- Configurar series y repeticiones por ejercicio.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Se eligió esta temática por su aplicabilidad real en el entorno de emprendimientos vinculados a la salud, fitness y entrenamiento personal.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Tecnologías utilizadas
 
-## Running end-to-end tests
+- **Angular 17**
+- **Bootstrap 5**
+- **TypeScript**
+- **MockAPI**
+- **API externa de ejercicios**
+- **StackBlitz** 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🚀 Funcionalidades principales
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Panel de navegación con enlaces a secciones clave.
+- Alta, edición y baja de clientes.
+- Alta, edición y baja de entrenamientos personalizados.
+- Selector visual con paginación para elegir ejercicios desde una API externa.
+- Visualización en tiempo real del “carrito” de ejercicios agregados.
+- Validaciones y mensajes de confirmación mediante toasts.
+- Layout responsivo con menú hamburguesa en pantallas pequeñas.
+
+---
+
+## 👤 Datos personales
+
+- **Nombre y apellido**: Gabriel Marrero
+- **DNI**: 38863420
+- **Email**: amarrero@alumnos.exa.unicen.edu.ar
+- **Carrera**: Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI) - Sede Lobería
+- **Materia**: Seminario Angular  
+- **Año**: 2025
+
+---
+
+## 🔗 Enlaces útiles
+
+- **Repositorio GitHub**: [https://github.com/gbmarr/fitadminapp](https://github.com/gbmarr/fitadminapp)
