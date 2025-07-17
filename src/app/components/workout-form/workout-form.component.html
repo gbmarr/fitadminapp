@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h2 class="mb-4">{{ editMode ? 'Editar entrenamiento': 'Nuevo entrenamiento'}}</h2>
+
+  <div class="row">
+    <div class="col-lg-8 col-12 mb-4">
+      <div class="mb-2">
+        <label class="form-label">Cliente</label>
+        <select class="form-select" [(ngModel)]="selectedCustomerId">
+          <option value="" disabled selected>Seleccionar cliente</option>
+          <option *ngFor="let c of customers" [value]="c.id">{{ c.nombre }}</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label class="form-label">Nombre del entrenamiento</label>
+        <input type="text" class="form-control" [(ngModel)]="nombre" />
+      </div>
+      
+      <app-exercise-picker (onAddExercise)="agregarEjercicio($event)"></app-exercise-picker>
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div class="card-shadow-sm">
+        <div class="card-header bg-success p-2 rounded text-white">
+          <strong>Ejercicios seleccionados</strong>
+        </div>
+        
+        <ul class="list-group list-group-flush" *ngIf="ejercicios.length > 0; else sinEjercicios">
+          <div class="list-group-item" *ngFor="let e of ejercicios">
+            <li class="d-flex justify-content-between align-items-center">
+              <div class="flex-grow-1">
+                <div>{{ e.nombre }}</div>
+                <div class="d-flex gap-2 mt-1">
+                  <input type="number" [min]="1" [max]="6" class="form-control form-control-sm" [(ngModel)]="e.series" (blur)="validarRango(e, 'series', 1, 6)" placeholder="Series" style="width: 70px;">
+                  <input type="number" [min]="1" [max]="30" class="form-control form-control-sm" [(ngModel)]="e.repeticiones" (blur)="validarRango(e, 'repeticiones', 1, 30)" placeholder="Reps" style="width: 70px;">
+                </div>
+              </div>
+              <button class="btn btn-sm btn-outline-danger" (click)="eliminarEjercicio(e.ejercicioId!)">Eliminar</button>
+            </li>
+          </div>
+        </ul>
+
+        <ng-template #sinEjercicios>
+          <div class="p-3 text-muted">No se han agregado ejercicios aún</div>
+        </ng-template>
+
+        <div class="mt-4 text-center">
+          <button class="btn btn-primary px-5" (click)="guardar()">Guardar entrenamiento
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

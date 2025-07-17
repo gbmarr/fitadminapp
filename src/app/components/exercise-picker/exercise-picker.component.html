@@ -1,0 +1,30 @@
+<div class="mb-3">
+  <input type="text" class="form-control" [(ngModel)]="search" (input)="filtrar()" placeholder="Buscar ejercicios..." />
+</div>
+
+<div *ngIf="pagedExercises.length > 0; else sinResultados">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+    <div class="col" *ngFor="let e of pagedExercises">
+      <div class="card h-100 shadow-sm">
+        <img class="card-img-top" style="cursor:pointer; object-fit: cover; height: 180px;" [src]="obtenerImagen(e)" (click)="alternarImagen(e.id)" alt="Imagen del ejercicio">
+        <div class="card-body p-2">
+          <small class="mb-1"><strong>Nivel:</strong> {{ e.level }}</small>
+          <h5 class="card-title mt-2 mb-2">{{ e.name }}</h5>
+          <p class="mb-1"><strong>Músculos primarios:</strong> {{ e.primaryMuscles }}</p>
+          <p class="mb-1"><strong>Equipamiento:</strong> {{ e.equipment }}</p>
+          <button class="btn btn-sm btn-success mt-2 w-100" (click)="seleccionar(e)">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center gap-3 mt-4">
+  <button class="btn btn-outline-primary" (click)="cambiarPagina('prev')" [disabled]="currentPage === 1">Anterior</button>
+  <span class="align-self-center">Página {{ currentPage }} de {{ totalPages() }}</span>
+  <button class="btn btn-outline-primary" (click)="cambiarPagina('next')" [disabled]="currentPage === totalPages()">Siguiente</button>
+</div>
+
+<ng-template #sinResultados>
+  <div class="alert alert-info">No se encontraron ejercicios.</div>
+</ng-template>
