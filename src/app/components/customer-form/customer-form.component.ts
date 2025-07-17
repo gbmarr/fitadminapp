@@ -7,8 +7,7 @@ import { Customer } from '../../models/customer.model';
 
 @Component({
   selector: 'app-customer-form',
-  templateUrl: './customer-form.component.html',
-  styleUrl: './customer-form.component.scss'
+  templateUrl: './customer-form.component.html'
 })
 export class CustomerFormComponent implements OnInit {
   form!: FormGroup;

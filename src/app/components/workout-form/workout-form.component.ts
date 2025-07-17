@@ -9,8 +9,7 @@ import { Exercise } from '../../models/exercise.model';
 
 @Component({
   selector: 'app-workout-form',
-  templateUrl: './workout-form.component.html',
-  styleUrl: './workout-form.component.scss'
+  templateUrl: './workout-form.component.html'
 })
 export class WorkoutFormComponent implements OnInit {
   customers: Customer[] = [];

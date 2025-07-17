@@ -4,8 +4,7 @@ import { ExerciseService } from '../../services/exercise.service';
 
 @Component({
   selector: 'app-exercise-picker',
-  templateUrl: './exercise-picker.component.html',
-  styleUrl: './exercise-picker.component.scss'
+  templateUrl: './exercise-picker.component.html'
 })
 export class ExercisePickerComponent implements OnInit {
   exercises: Exercise[] = [];

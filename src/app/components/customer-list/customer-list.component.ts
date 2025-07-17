@@ -5,8 +5,7 @@ import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html',
-  styleUrl: './customer-list.component.scss'
+  templateUrl: './customer-list.component.html'
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];

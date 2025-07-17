@@ -7,8 +7,7 @@ import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-workout-list',
-  templateUrl: './workout-list.component.html',
-  styleUrl: './workout-list.component.scss'
+  templateUrl: './workout-list.component.html'
 })
 export class WorkoutListComponent implements OnInit {
   workouts: Workout[] = [];
